@@ -1,0 +1,32 @@
+\section{Arytmetyka zmiennopozycyjna}
+
+\entry
+$6.63 \cdot 10^{-34}$ - $6.63$ - mantysa, $-34$ - cecha, $10$ - podstawa
+
+\entry
+$x = (-1)^s \cdot m \cdot b^e$ - $s$ - znak, $m = (f_0.f_1f_2...f_{p-1)_2}$ - mantysa, $b$ - podstawa, $e$ - cecha
+
+\entry
+W liczbach maszynowych $\beta = 2$
+
+\entry
+$(1 - e_{max} \leq e \leq e_{max})$
+
+\entry
+Liczby maszynowe są normalizowane $f_0 = 1$ i nie jest zapisywane.
+
+\entry
+W 6-bitowej arytmetyce zmiennopozycyjnej liczby subnormalne zachodzą dla $e=-2$ i $f_0 = 0$.
+
+\entry
+Metody aproksymacji liczb maszynowych:\\
+RN - do najbliższej (domyślnie)\\
+RD - w dół, tzn w stone -$\infty$\\
+RU - w górę, tzn w stronę $\infty$\\
+RZ - do zera $RZ(x) = RD(x)$ gdy $x \geq 0$,$RU(x)$ gdy $x \leq 0$
+
+\entry
+Jeśli $|x| \in [realmin, realmax]$ to $\frac{|x - RN(x)|}{|x|} \leq \frac{1}{2^p} =v$
+
+\entry 
+$fl(x) = x (1 \cdot \epsilon)$, gdy $|\epsilon| \leq v$.
