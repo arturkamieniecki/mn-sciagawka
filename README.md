@@ -1,5 +1,8 @@
 # Ściągawka na metody numeryczne
 
+## Kontrubuje
+Jeżeli chcesz się dołączyć do współpracy, zachęcam zajrzeć w issues i przygotować notatki na wybrany temat. Proszę wtedy o komentarz w issue odnośnie tego, że notatki są wykonwyane.
+
 ## Autorzy
 Schemat generacji plików i template latex powstał na bazie [https://github.com/wakacjezmd/karty-wzorow](https://github.com/wakacjezmd/karty-wzorow).
 
