@@ -1,0 +1,56 @@
+\section{Uwarunkowanie zad. i numeryczna poprawnosc}
+
+\entry
+$\norm{\tilde{x}-x}$ - błąd bezwzględny, $\norm{\tilde{x}-x}/\norm{x}$ - błąd względny ($x \neq 0$)
+
+\entry
+Wskaźnik uwarunkowania (bezwzględny) na poziomie $\epsilon$\\
+$cond_{abs}(P,x,\epsilon) = \sup_{\norm{\Delta} \leq \epsilon} \frac{\norm{P(x+\Delta) - P(x)}}{\norm{\Delta}}$\\
+$\norm{P(\tilde{x}) - P(x)} \leq cond_{abs}(P,x,\epsilon) \cdot \norm{\tilde{x}-x}$, dla $\norm{\tilde{x}-x} \leq \epsilon$
+
+\entry
+Idealizacja punktowy wskaźnik uwarunkowania\\
+$cond_{abs}(P,x) = \lim_{\epsilon \to 0} cond_{abs}(P,x,\epsilon)$
+
+\entry
+Gdy P różniczkowalna to $cond_{abs}(P,x) = \norm{P'(x)}$
+
+\entry
+Wrażliwość dla błędu względnego\\
+$cond_{rel}(P,x,\epsilon) = \sup_{\norm{\Delta} \leq \epsilon} \frac{\norm{P(x+\Delta) - P(x)}}{\norm{P(x)}} / \frac{\norm{\Delta}}{\norm{x}} = cond_{abs}(P,x,\epsilon\norm{x})\frac{\norm{x}}{\norm{P(x)}}$\\
+Punktowo:\\
+$cond_{rel}(P,x) = \lim_{\epsilon \to 0} cond_{rel}(P,x,\epsilon)$\\
+Gdy P jest różniczkowalna to $cond_{rel}(P,x) = \frac{\norm{P'(x)}}{\norm{P(x)}}$
+
+\entry
+Zadanie dobrze uwarunkowanie: $cond(P,x)$ nieduże\\
+Zadanie źle uwarunkowane: $cond(P,x)$ bardzo duże 
+
+\entry
+Normy wektorowe\\
+$\norm{x}_1 = \sum_{i=1}^n |x_i|$, $\norm{x}_2 = \sqrt{\sum_{i=1}^n |x_i|^2}$, $\norm{x}_p = (\sum_{i=1}^n |x_i|^p)^{1/p}$, $\norm{x}_\infty = \max_{1 \leq i \leq n} |x_i|$
+
+\entry
+$\norm{x}_\infty \leq \norm{x}_1 \leq N \norm{x}_\infty$, $\norm{x}_\infty \leq \norm{x}_2 \leq \sqrt{n} \norm{x}_\infty$, $\norm{x}_2 \leq \norm{x}_1 \leq \sqrt{n} \norm{x}_2$
+
+\entry
+$\norm{A} = max_{\norm{x} \neq 0} \norm{Ax} / \norm{x} = max_{\norm{x}=1}\norm{Ax} = max_{\norm{x} \leq 1}\norm{Ax}$
+
+\entry
+$\norm{Ax} \leq \norm{A} \norm{x}$, $\norm{AB} \leq \norm{A} \norm{B}$, $\norm{I} = 1$, $\norm{A}_1 = max_j \Sigma_i |a_{ij}|$, $\norm{A}_\infty = max_i \Sigma_j |a_{ij}|$, $\norm{A}_2 =max\{\sqrt{\mu}: \mu \text{ jest w. wł. }A^TA\}$
+
+\entry 
+$cond(A) = \norm{A} \norm{A^{-1}}$
+
+\entry
+Ay = b. Jeśli $\epsilon cond(A) \leq 1/2$ to $\norm{\tilde{y}-y}/\norm{y} \leq 4cond(A)\cdot\epsilon$
+
+\entry
+Jeśli $\norm{\Delta} < 1$ to $I + \Delta$ nieosobliwa i $1/(1+\norm{\Delta}) \leq \norm{(I+\Delta)^{-1}} \leq 1/(1-\norm{\Delta})$
+
+\entry
+Algorytm poprawnie numeryczny - dla każdego $x\in X$ wynik algorytmu A zrealizowanego w fl $fl(A(fl(x)))$ jest dokładnym rozwiązaniem zadania dla danych x zaburzonych na poziomie błędu reprezentacji.
+
+\entry 
+Algorytm NP daje wynik, którego błąd można oszacować na podstawie własności zadania obliczeniowego: \\
+$\norm{\tilde{y} - y} / \norm{y} = \norm{P(\tilde{x}) - P(x)}/\norm{P(x)} \lesssim cond_{rel}(P, x)\norm{\tilde{x}-x}/\norm{x} \leq K \cdot cond_{rel}(P,x) \cdot v$
