@@ -1,0 +1,52 @@
+\section{LZNK}
+$A \in \mathbb{R}^{m \times n},m \ge n, \text{rank}(A)=n, \vv{b} \in \mathbb{R}^m$, znaleźć $\vv{x} \in \mathbb{R}^n$ taki, że $\lVert \vv{b} - A\vv{x} \rVert_2 \to min$.\\
+$\lVert \vv{b} - A\vv{x} \rVert \le \lVert \vv{b} - A\vv{y} \rVert \forall y$.\\
+\entry
+$QR$ ---
+$
+A = QR = 
+\begin{bmatrix}
+  \hat{Q} & \tilde{Q}
+\end{bmatrix}
+\begin{bmatrix}
+  \hat{R}
+  \\
+  0
+\end{bmatrix}
+\implies$\\
+$
+\lVert \vv{b} - A\vv{x} \rVert_2^2 =
+\lVert \hat{Q}^T \vv{b} - \hat{R} \vv{x} \rVert_2^2 + \lVert \tilde{Q}^T \vv{b} \rVert_2^2 = \min \iff
+\hat{R}\vv{x} = \hat{Q}\vv{b}
+$
+
+\entry
+$A^TA$ ---
+mała, symetryczna, dodatnio określona
+$A^TA \vv{x} = A^T \vv{b}$
+
+\entry
+Algorytm:
+oblicz $B = A^TA \rightarrow$
+wyznacz Cholesky'ego $B = LL^T \rightarrow$
+rozwiąż $LL^T\vv{x} = A^T \vv{b}$
+
+\entry
+$SVD$ ---
+$A \in \mathbb{R}^{m \times n}, m \ge n$, istnieje
+$A = U \Sigma V^T$, że\\
+$
+U \in \mathbb{R}^{m \times n}: U^TU = I,
+V \in \mathbb{R}^{n \times n}: V^TV = I,
+\Sigma \in \mathbb{R}^{n \times n}: \Sigma = \text{diag}\left(\sigma_1, .., \sigma_n\right),
+\sigma_1 \ge .. \ge \sigma_n \ge 0
+$\\
+$
+\lambda(A^TA) = (\sigma_1^2, .., \sigma_n^2),
+\sigma_1 \ge .. \ge \sigma_r > \sigma_{r+1}=..=\sigma_n = 0 \implies \text{rank}{A} = r
+$\\
+$ A = \sum_{i=1}^n \sigma_i \vv{u_i} \vv{v_i}^T \text{ gdzie }\vv{u_i},\vv{v_i} \text{ --- kolumny } U,V $\\
+$ \lVert \vv{b} - A \vv{x} \rVert_2^2 = \sum_{i=1}^r \left( \sigma_i y_i - \vv{u_i}^T \vv{b} \right)^2 + \sum_{i=r+1}^m \left( \vv{u_i}^T \vv{b} \right)^2 \rightarrow
+\min \text{, gdy } y_i = \frac{\vv{u_i}^T \vv{b}}{\sigma_i} $,\\
+To oznacza, że rozwiązanie LZNK jest jednoznacznie określone
+$\vv{x^*} = \sum_{i=1}^r \frac{\vv{u_i}^T \vv{b}}{\sigma_i}\vv{v_i}$
