@@ -1,0 +1,57 @@
+% Układy równań liniowych
+\section{Układy równań liniowych}
+\subsection{Podstawowe pojęcia}
+\entry
+$Ax = b$ ma rozwiązanie gdy: $det(A) \neq 0$, $b = 0$ to $x = 0$, $ker(A) = \{0\}$, $A$ nie ma zerowej wartości własnej, $A$ jest odwracalna.
+
+\entry
+Macierz z diagonalą rozwiązuje się trywialnie: $x_i = \frac{b_i}{a_{ii}}$. Koszt $O(n)$.
+
+\entry
+FLOP - FLoating point OPeration - dodawanie, mnożenie, dzielenie, odejmowanie, sqrt to jeden flop.
+
+\entry
+Macierz trójkątna dolna, układ równań rozwiązany w przód: $x_i = \frac{b_i - \Sigma_{j=1}^{i-1} a_{ji}x_j}{a_{ii}}$. Koszt $O(n^2)$.
+
+\entry
+Macierz trójkątna górna rozwiązanie analogiczne (w tył), koszt $O(n^2)$.
+
+\entry
+Macierz ortogonalna $Q$ spełnia $Q^TQ = I$, $Q^{-1} = Q^T$.
+
+\entry
+Gdy $A$ ortogonalna, to $Ax = b$ ma rozwiązanie $x = A^Tb$. Koszt $O(n^2)$.
+
+\subsection{Rozkład LU}
+\entry
+$PA = LU$ (z wyborem) lub $A = LU$ (bez wyboru), $P$ - permutacja, $L$ - trójkątna dolna, $U$ - trójkątna górna.
+
+\entry
+Standardowy algorytm rozkładu LU z bez wyboru elementu głównego: $A = LU$.
+$  PA =
+    \begin{bNiceArray}{c|c}
+        a_{1,1} & a_{1,2}^T
+        \\
+        \hline
+        a_{2,1} & A_{2,2}
+    \end{bNiceArray} =
+    \begin{bNiceArray}{c|c}
+        1 & 0^T
+        \\
+        \hline
+        l_{2,1} & L_{2,2}
+    \end{bNiceArray} \cdot
+    \begin{bNiceArray}{c|c}
+        u_{1,1} & u_{1,2}^T
+        \\
+        \hline
+        0 & U_{2,2}
+    \end{bNiceArray}
+$\\
+$u_{1,1} = a_{1,1}$, $u_{1,2} = a_{1,2}$, $l_{2,1} = \frac{a_{2,1}}{u_{1,1}}$, aktualizuj $A_{2,2} = A_{2,2} - l_{2,1}u_{1,2}^T$, wyznacz $A_{2,2} = L_{2,2}U_{2,2}$.\\
+Działa gdy wszystkie miniory główne macierzy $A$ są niezerowe.
+
+\entry
+GEPP - Gauss Elimination with Partial Pivoting - GE z częściowym wyborem elementu głównego.\\
+$PA = LU$, $P$ - permutacja, $L$ - trójkątna dolna, $U$ - trójkątna górna.\\
+$PAx = LUx = Pb$, $\tilde{b} = Pb$, $Lx = \tilde{b}$, $Uy = y$. Koszt $O(n^3)$.
