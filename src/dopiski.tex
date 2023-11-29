@@ -1,0 +1,37 @@
+\section{Dopiski}
+\subsection{Rozkład QR}
+\entry
+$A = QR$, $Q$ --- ortogonalna, $R$ --- trójkątna górna.
+
+\entry
+Housholder --- dany $\vv{x} \in \mathbb{R}^n,\quad \alpha = \norm{\vv{x}} \cdot -\text{sgn}(x_1)$\\
+$\vv{u} = \vv{x} - \alpha\vv{e_1},\quad \vv{v} = \frac{\vv{u}}{\norm{\vv{u}}},\quad Q = I - 2\vv{v}\vv{v}^T,\quad Qx = \begin{bmatrix} \alpha \\ 0 \\ \vdots \\ 0 \end{bmatrix}$
+
+\entry
+$
+Q_1A =
+\begin{bNiceArray}{cccc}
+  \alpha_1 & * & \hdots & *\\
+  0 & \Block{3-3}<\Large>{A'}\\
+  \vdots &\\
+  0 &
+\end{bNiceArray}
+$
+
+\entry
+$
+Q_k = \begin{bmatrix}
+  I_{k-1} & 0\\
+  0 & Q_{k}'
+\end{bmatrix}
+$
+
+\entry
+$R = Q_t \hdots Q_2 Q_1 A$\\
+\entry
+$Q^T = Q_t \hdots Q_1$\\
+\entry
+$Q = Q_1^T \hdots Q_t^T = Q_1 \hdots Q_t$
+
+\entry
+Zamiast tego można użyć ortogonalizacji Grama-Schmidta, która nie jest tak numerycznie stabilna, ale można ją zastosować kilkukrotnie (reortogonalizacja) żeby poprawić wynik.
