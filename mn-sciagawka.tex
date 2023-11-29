@@ -10,6 +10,9 @@
 \usepackage{scalefnt}
 \usepackage[yyyymmdd,hhmmss]{datetime}
 \usepackage{commath}
+\usepackage[b]{esvect}  % lepsze strzałki nad wektorami
+\usepackage{nicematrix} % łatwe macierze blokowe
+
 
 % Potrzebne do algorytmu Euklidesa.
 \usepackage{tikz}
@@ -45,6 +48,14 @@
 \text{\tiny{
     Wersja z \today\ o \currenttime\ (\pdfmdfivesum file{./mn-sciagawka.tex})
 }}
+
+\input{src/uklady_rownan_liniowych.tex}
+
+\input{src/arytmetyka_zmiennopozycyjna.tex}
+
+\input{src/numeryczna_poprawnosc.tex}
+
+\input{src/lznk.tex}
 
 \input{src/metody_iteracyjne.tex}
 
