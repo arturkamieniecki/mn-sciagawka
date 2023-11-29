@@ -1,0 +1,60 @@
+\section{Zagadnienie własne}
+\entry
+Znaleźć $\vv{v} \in \mathbb{C}^n$ oraz $\lambda \in \mathbb{C}$ t. że
+$A\vv{v} = \lambda\vv{v} \land \norm{\vv{v}} = 1$.
+
+\entry
+Każda symetryczna macierz $A\in\mathbb{R}^{n\times n}$ ma rozkład\\
+$A = Q \Lambda Q^T$, $\Lambda =
+\begin{bmatrix}
+  \lambda_1\\
+  & \ddots \\
+  && \lambda_n
+\end{bmatrix}$,\\
+$\lambda_i \in \mathbb{R}$ --- wartości własne $A$, kolumny $Q$ --- wektory własne $A$.
+
+\entry
+Metoda potęgowa --- zakładamy  ze $|\lambda_1| > |\lambda_2| \ge \hdots \ge |\lambda_n|$,\\
+losuj $\vv{x_0}$,\quad $\vv{x_{k+1}} = A\vv{x_k} / \norm{A \vv{x_k}}$,
+znajduje $\lambda_{\text{max}}$.
+
+\entry
+Wyznaczanie wartości własnej na podstawie wektora własnego.
+$\norm{A\vv{v} - \lambda\vv{v}} \rightarrow \min$,
+$\lambda = \frac{\vv{x}^H A\vv{v}}{\vv{x}^H\vv{x}}$
+
+\entry
+Odwrotna metoda potęgowa --- zakładamy  ze $|\lambda_1| \ge \hdots \ge |\lambda_n| > 0$,
+wyznacz $PA = LU$, losujemy $\vv{x_0}$,
+rozwiąż $LU\vv{x_{k+1}} = P\vv{x_k}$, przeskaluj $\vv{x_{k+1}} = \vv{x_{k+1}}/\norm{\vv{x_{k+1}}}$,
+znajduje $1 / \lambda_{\text{min}}$.
+
+\entry
+Odwrotna metoda potęgowa z parametrem --- to samo, co odwrotna ale dla $(A - \mu)^{-1}$,
+znajduje $\lambda$ najbliższe $\mu$.
+
+\entry
+$\forall_{i} \lambda_i(A) \le \norm{A}$
+
+\entry
+Koła Greszgorina --- $\forall_{\lambda} \exists_{i} |\lambda - a_{ii}| \le \sum_{j\neq i}|a_{ij}|$
+
+\entry
+\begin{tabular}{|
+    >{\centering}p{2cm}|
+    >{\centering}p{2cm}|
+    >{\centering}p{1.5cm}|
+    >{\centering\arraybackslash}p{2cm}
+  |}
+  \hline
+  Macierz & wart. wł. & wekt. wł. & zastrz.\\
+  \hline
+  $A$ & $\lambda$ & $\vv{v}$ & --- \\
+  \hline
+  $A - \mu I$ & $\lambda - \mu$ & $\vv{v}$ & --- \\
+  \hline
+  $A^{-1}$ & $1/\lambda$ & $\vv{v}$ & $A$ nieos. \\
+  \hline
+  $(A - \mu I)^{-1}$ & $1/(\lambda - \mu)$ & $\vv{v}$ & $A-\mu$ nieos. \\
+  \hline
+\end{tabular}
