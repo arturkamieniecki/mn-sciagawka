@@ -27,29 +27,29 @@ Gdy $A$ ortogonalna, to $Ax = b$ ma rozwiązanie $x = A^Tb$. Koszt $O(n^2)$.
 $PA = LU$ (z wyborem) lub $A = LU$ (bez wyboru), $P$ - permutacja, $L$ - trójkątna dolna, $U$ - trójkątna górna.
 
 \entry
-Standardowy algorytm rozkładu LU z bez wyboru elementu głównego: $A = LU$.
+Standardowy algorytm rozkładu LU z bez wyboru elementu głównego: $A = LU$.\\
 $  PA =
     \begin{bNiceArray}{c|c}
-        a_{1,1} & a_{1,2}^T
-        \\
-        \hline
-        a_{2,1} & A_{2,2}
+      a & \vv{w}^T
+      \\
+      \hline
+      \vv{v} & A'
     \end{bNiceArray} =
     \begin{bNiceArray}{c|c}
-        1 & 0^T
-        \\
-        \hline
-        l_{2,1} & L_{2,2}
+      1 & \vv{0}^T
+      \\
+      \hline
+      \vv{w}/a & I
     \end{bNiceArray} \cdot
     \begin{bNiceArray}{c|c}
-        u_{1,1} & u_{1,2}^T
-        \\
-        \hline
-        0 & U_{2,2}
+      a & \vv{w}^T
+      \\
+      \hline
+      \vv{0} & {A'-\vv{v}\vv{w}^T/a}
     \end{bNiceArray}
 $\\
-$u_{1,1} = a_{1,1}$, $u_{1,2} = a_{1,2}$, $l_{2,1} = \frac{a_{2,1}}{u_{1,1}}$, aktualizuj $A_{2,2} = A_{2,2} - l_{2,1}u_{1,2}^T$, wyznacz $A_{2,2} = L_{2,2}U_{2,2}$.\\
-Działa gdy wszystkie miniory główne macierzy $A$ są niezerowe.
+Powtórz dla $U_{22}$.
+Działa gdy wszystkie minory główne macierzy $A$ są niezerowe.
 
 \entry
 GEPP - Gauss Elimination with Partial Pivoting - GE z częściowym wyborem elementu głównego.\\
