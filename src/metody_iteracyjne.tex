@@ -1,0 +1,25 @@
+\section{Metody iteracyjne}
+
+\entry
+Ciąg $x_{k+1} = Bx_k + c$ jest zbieżny do $x^*$ dla każdego $x_0$ wtedy i tylko wtedy, gdy $\rho(B) < 1$. gdzie $\rho(B)$ to promień spektralny macierzy $B$ ($\rho(B) = max\{|\lambda| : \lambda \text{ jest w. wł. B}\}$)
+
+\entry
+Jeśli $\norm{B} < 1$ to ciąg $x_{k+1} = Bx_k + c$ jest zbieżny do $x^*$ dla każdego $x_0$. oraz $\norm{x^* - x_k} \leq \norm{B} \cdot \norm{x_k - x^*}$
+
+\entry 
+Niech $A = M - Z$ oraz $A,M$ nieosobliwe. $Ax^* = b$. Jeśli $\rho(M^{-1}Z) < 1$ to metoda iteracyjna $Mx_{k+1} = Zx_k + b$ jest zbieżna do $x^*$ dla każdego $x_0$.\\
+Jeśli dodatkowo $\gamma = \norm{M^{-1}Z}_\infty < 1$ to $\norm{x^* - x_k} \leq \gamma \cdot \norm{x_k - x^*}$
+
+\entry
+Niech $A = L + D + U$, $D = diag(A)$, $L$ (odp. U) - dolna (odp. górna) trójkątna z zerową diagonalą.\\
+$x_{k+1} = x_k + M^{-1}(b-Ax_k)$\\
+Metoda Jacobiego: $M = D$, Metoda Gaussa-Seidela: $M = D + L$, Metoda SOR: $M = 1/\omega D + L$.
+
+\entry
+Jeśli $A$ jest diagonalnie dominująca to m. Jacobiego jest zbieżna do $x^*$ dla każdego $x_0$.
+
+\entry 
+$x_{k+1} = x_{k} + \delta_k$. Jak wybrać $\delta_k$?. Idealna poprawka $\delta_k^*$:\\
+$A\delta_k^* = r_k \rightarrow x_{k+1} = x^*$\\
+Wyznaczamy idealną poprawkę $\delta_k^* = V_k a_k$, gdzie $V_k, U_k \in \mathbb{R}^{N \times r}$ max rzędu t. że $a_k \in \mathbb{R}^r$ spełnia:\\
+$U_k^TAV_k a_k = U_k^Tr_k$\\
